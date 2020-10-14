@@ -39,3 +39,8 @@ docker run -p 8080:80 --name mynginx -v /F/docker/nginx/www:/www -v /F/docker/ng
 ```
 docker run -v /F/docker/quartz:/app/File  --restart=unless-stopped --privileged=true --name quartzui -dp 5088:80 bennyzhao/quartzui
 ```
+
+## Consul
+```
+docker run -d -p 8500:8500 --restart=always --name=consul consul agent -server -bootstrap-expect=1 -node=consul_server_1 -client='0.0.0.0' -ui
+```
