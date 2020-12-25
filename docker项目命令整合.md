@@ -44,3 +44,11 @@ docker run -v /F/docker/quartz:/app/File  --restart=unless-stopped --privileged=
 ```
 docker run -d -p 8500:8500 --restart=always --name=consul consul agent -server -bootstrap-expect=1 -node=consul_server_1 -client='0.0.0.0' -ui
 ```
+
+## Postgres
+```
+docker run --name postgres -e POSTGRES_PASSWORD=dujiadi -v dv_pgdata:/var/lib/postgresql/data -p 5432:5432 -d postgres
+
+docker run --name postgres -e POSTGRES_PASSWORD=dujiadi -v /E/docker/postgresql/data:/var/lib/postgresql/data -p 5432:5432 -d postgres
+
+```
